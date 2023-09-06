@@ -1,16 +1,15 @@
 'use strict';
 
 /** @type {import('sequelize-cli').Migration} */
-const usuario = require("../models").usuario;
+const presupuesto = require('../models').presupuesto;
 
 module.exports = {
   async up (queryInterface, Sequelize) {
-    await usuario.sync()
+    await presupuesto.sync()
   },
 
   async down (queryInterface, Sequelize) {
       /* ELIMINACIÓN LA TABLA */
-      await queryInterface.dropTable('usuario');
+      await queryInterface.dropTable('presupuesto');
   }
-  
 };

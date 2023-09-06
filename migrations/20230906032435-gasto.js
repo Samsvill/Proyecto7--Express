@@ -1,16 +1,16 @@
 'use strict';
 
 /** @type {import('sequelize-cli').Migration} */
-const categoria_gasto_has_gasto = require("../models").categoria_gasto_has_gasto;
+const gasto = require("../models").gasto;
 
 module.exports = {
   async up (queryInterface, Sequelize) {
-    await categoria_gasto_has_gasto.sync()
+    await gasto.sync()
   },
 
   async down (queryInterface, Sequelize) {
       /* ELIMINACIÓN LA TABLA */
-      await queryInterface.dropTable('categoria_gasto_has_gasto');
+      await queryInterface.dropTable('gasto');
   }
   
 };
