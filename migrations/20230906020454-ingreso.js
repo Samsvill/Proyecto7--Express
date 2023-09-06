@@ -2,16 +2,15 @@
 
 /** @type {import('sequelize-cli').Migration} */
 
-const categoria_gasto = require("../models").categoria_gasto;
+const ingreso = require("../models").ingreso;
 
 module.exports = {
   async up (queryInterface, Sequelize) {
-    await categoria_gasto.sync()
+    await ingreso.sync()
   },
 
   async down (queryInterface, Sequelize) {
       /* ELIMINACIÓN LA TABLA */
-      await queryInterface.dropTable(categoria_gasto);
+      await queryInterface.dropTable('ingreso');
   }
-  
 };

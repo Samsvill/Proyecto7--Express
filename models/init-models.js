@@ -4,6 +4,7 @@ var _categoria_gasto_has_gasto = require("./categoria_gasto_has_gasto");
 var _gasto = require("./gasto");
 var _ingreso = require("./ingreso");
 var _presupuesto = require("./presupuesto");
+var _sequelizemeta = require("./sequelizemeta");
 var _usuario = require("./usuario");
 
 function initModels(sequelize) {
@@ -12,6 +13,7 @@ function initModels(sequelize) {
   var gasto = _gasto(sequelize, DataTypes);
   var ingreso = _ingreso(sequelize, DataTypes);
   var presupuesto = _presupuesto(sequelize, DataTypes);
+  var sequelizemeta = _sequelizemeta(sequelize, DataTypes);
   var usuario = _usuario(sequelize, DataTypes);
 
   categoria_gasto_has_gasto.belongsTo(categoria_gasto, { as: "idCategoria_gasto_categoria_gasto", foreignKey: "idCategoria_gasto"});
@@ -31,6 +33,7 @@ function initModels(sequelize) {
     gasto,
     ingreso,
     presupuesto,
+    sequelizemeta,
     usuario,
   };
 }
